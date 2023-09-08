@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body background="istockphoto-1130887747-612x612-2.jpg">
+
+<p><h1 align="center"></h1></p>
+<div class="container">
+<div class="row">
+
+
+
+
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(220, 61%, 84%);">
+            Welcome to Papr
+            <br>
+              A Handwriting <br />
+            <span style="color: hsl(218, 81%, 75%)">To Text OCR</span><br>
+            <span style="color: hsl(220, 61%, 84%)">By</span><br>
+            <span style="color: hsl(218, 81%, 75%)">Uyi Austin Osareniye</span><br>
+            <span style="color: hsl(218, 81%, 80%)">PSC1808959</span><br>
+            <br>
+            <button type="button" class="btn btn-light btn-rounded" style="margin-top: 10px;background-color: #92ccf3; color: #ffffff;" ><a href="/home" style="color: rgb(255, 255, 255);">Get Started</a>
+            </button>
+
+          </h1>
+
+          <br>          
+
+          <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+
+          </p>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+          <div>
+            <div class="card-body px-4 py-5 px-md-5">
+              <img src="https://novianarif.files.wordpress.com/2019/10/fdca1bb4-c701-4f7d-b0d5-6112785ea7f1.jpg" style="height: 100%; width: 100%; backdrop-filter: saturate(200%) blur(25px); opacity: 0.3;">
+
+              <form method="post" action="/home" enctype="multipart/form-data">
+                <br>
+                
+
+                <br>
+                <br>
+                </div>
+                
+                        <div class="form-group">
+                        <div id="image-box" class="image-container"></div>
+                        <button class="btn btn-outline-info" id="crop-btn" style="margin-top: 10px; display: none; background-color: #92ccf3; color: #f8f9e5;" type="button">Crop</button>
+                        <p>
+                        </p>
+                        </div>
+              </form>
+          </div>
+          </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </body>
+
+  {% endblock %}
+
+  <style>
+  .bg-glass {
+    background-color: hsla(0, 0%, 100%, 0.9) !important;
+    backdrop-filter: saturate(200%) blur(25px);
+  }
+
+  </style>
+
+
+
+    

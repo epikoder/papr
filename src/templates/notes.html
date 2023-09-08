@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 align='center'></h1>
+    <br>
+    <br>
+    <form method="POST">
+        <textarea name="note"
+                  id="note"
+                  class="form-control z-depth-1 bg-me"
+                  spellcheck="true"
+                  placeholder="Write something here..."
+                  rows="3"></textarea>
+        <div class="image-upload">
+            <label for="id_image">
+                <i class="bi bi-image scrollto"></i>
+            </label>
+            <input type="file"
+                   name="file"
+                   class="form-control bi bi-image scrollto"
+                   autocomplete="off"
+                   id="id_image"
+                   accept="image/*"
+                   style="display: none" />
+            <button type="submit" class="btn">
+                <span class='bi bi-archive'></span>
+            </button>
+            <button type="submit" id="btnn" class="btn">
+                <span class='bi bi-arrow-right-square-fill'></span>
+            </button>
+        </div>
+        <br>
+    </form>
+    <ul style="text-align:'center'"
+        class="list-group list-group-flush bg-glass"
+        id="images">
+        {% for image in user.images %}
+            <li class="list-group-item border-0 rounded bg-glass">
+                <img src="src/static/uploads/{{ image.filename }}"
+                     width="100%"
+                     height="auto">
+                <div style="text-align:'center';" class="form-group">
+                    <textarea class="form-control" style=" align-items: center; font-size: 30px;">{{ image.label }} </textarea>
+                </div>
+                <a href="src/static/uploads/{{ image.filename }}"
+                   download
+                   style="display: flex;
+                          float: left;
+                          color: #000">
+                    <span class="bi bi-download"></span>
+                </a>
+                <a href="/deleteImage/{{ image.id }}" class="close"><span aria-hidden="true">&times;</span></a>
+                <!-- <button type="button"
+         class="close"
+         onClick="deleteImage({{ image.id }})"
+         style="margin-bottom: none"> -->
+                <!-- <span aria-hidden="true" class="bi bi-x-lg"></span>
+        </button> -->
+            </li>
+        {% endfor %}
+    </ul>
+    <ul style="text-align:'center'"
+        class="list-group list-group-flush gradient-custom"
+        style="border-bottom: none"
+        id="notes">
+        {% for note in user.notes %}
+            <li class="list-group-item gradient-custom border-0 rounded">
+                <textarea class="form-control"><h3></h3>{{ note.data }}</textarea>
+                <a href="/deleteNotes/{{ note.id }}" class="close"><span aria-hidden="true">&times;</span></a>
+                <!-- <button type="button" class="close" onClick="deleteNote({{ note.id }})"> -->
+                <!-- <span aria-hidden="true">&times;</span>
+        </button> -->
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+    <!---
+      <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Barcode</th>
+                <th scope="col">img</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.id }}</td> 
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.barcode }}</td>
+                    <td>{{ item.price }}$</td>
+                    <td>
+                        <button class="btn btn-outline btn-info">Open</button>
+                        <button class="btn btn-outline btn-success">Download</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+-->
+    <style>
+    .shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+}
+#btn{
+    display: flex;
+    float: left;
+}
+
+#btnn{
+    display: flex;
+    float: right;
+}
+.bg-glass {
+    background:  linear-gradient(to right, rgb(255, 255, 255), rgb(225, 224, 169)) !important;
+    backdrop-filter: inherit;
+  }
+  .bg-me {
+    background:  linear-gradient(to right, rgb(255, 255, 255), rgb(240, 240, 213)) !important;
+    backdrop-filter: inherit;
+  }
+    </style>
+{% endblock %}

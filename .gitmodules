@@ -1,0 +1,3 @@
+[submodule "src/static/cropperjs"]
+	path = src/static/cropperjs
+	url = https://github.com/fengyuanchen/cropperjs
