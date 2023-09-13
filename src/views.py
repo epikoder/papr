@@ -19,8 +19,8 @@ ALLOWED_EXTENSIONS = {'gif', 'png', 'jpg', 'jpeg', 'tif'}
 views = Blueprint('views', __name__)
 
 line_list = []
-processor = TrOCRProcessor.from_pretrained("microsoft/trocr-base-handwritten") 
-model = VisionEncoderDecoderModel.from_pretrained("microsoft/trocr-base-handwritten")
+processor = TrOCRProcessor.from_pretrained("microsoft/trocr-large-handwritten") 
+model = VisionEncoderDecoderModel.from_pretrained("microsoft/trocr-large-handwritten")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
